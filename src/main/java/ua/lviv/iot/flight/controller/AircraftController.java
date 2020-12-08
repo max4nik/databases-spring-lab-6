@@ -73,12 +73,12 @@ public class AircraftController {
       aircraft.setId(id);
       aircraftService.update(id, aircraft);
       AircraftDto aircraftOldDto = new AircraftDto(
-          aircraft.getId(),
-          aircraft.getModelName(),
-          aircraft.getType(),
-          aircraft.getYearsInUse(),
-          aircraft.getMaxSeats(),
-          aircraft.getAviacompany().getName()
+          aircraftOld.getId(),
+          aircraftOld.getModelName(),
+          aircraftOld.getType(),
+          aircraftOld.getYearsInUse(),
+          aircraftOld.getMaxSeats(),
+          aircraftOld.getAviacompany().getName()
       );
       return new ResponseEntity<>(aircraftOldDto, HttpStatus.OK);
     } else {

@@ -79,16 +79,16 @@ public class FlightController {
     if (flightOld != null) {
       flightService.update(id, flight);
       FlightDto flightOldDto = new FlightDto(
-          flight.getId(),
-          flight.getFromAirport().getName(),
-          flight.getToAirport().getName(),
-          flight.getDepartureTime(),
-          flight.getArrivalTime(),
-          flight.getPilot().getName(),
-          flight.getAircraft().getModelName(),
-          flight.getAvailable(),
-          flight.getAviacompany().getName(),
-          flight.getAvailableSeats()
+          flightOld.getId(),
+          flightOld.getFromAirport().getName(),
+          flightOld.getToAirport().getName(),
+          flightOld.getDepartureTime(),
+          flightOld.getArrivalTime(),
+          flightOld.getPilot().getName(),
+          flightOld.getAircraft().getModelName(),
+          flightOld.getAvailable(),
+          flightOld.getAviacompany().getName(),
+          flightOld.getAvailableSeats()
       );
       return new ResponseEntity<>(flightOldDto, HttpStatus.OK);
     } else {

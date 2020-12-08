@@ -70,11 +70,11 @@ public class AviacompanyController {
     if (aviacompanyOld != null) {
       aviacompanyService.update(id, aviacompany);
       AviacompanyDto aviacompanyOldDto = new AviacompanyDto(
-          aviacompany.getId(),
-          aviacompany.getName(),
-          aviacompany.getCreationDate(),
-          aviacompany.getAircrafts().size(),
-          aviacompany.getFlights().size()
+          aviacompanyOld.getId(),
+          aviacompanyOld.getName(),
+          aviacompanyOld.getCreationDate(),
+          aviacompanyOld.getAircrafts().size(),
+          aviacompanyOld.getFlights().size()
       );
       return new ResponseEntity<>(aviacompanyOldDto, HttpStatus.OK);
     } else {

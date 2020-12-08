@@ -72,11 +72,11 @@ public class PilotController {
       pilot.setId(id);
       pilotService.update(id, pilot);
       PilotDto pilotOldDto = new PilotDto(
-          pilot.getId(),
-          pilot.getSurName(),
-          pilot.getName(),
-          pilot.getPosition(),
-          pilot.getFlights().size()
+          pilotOld.getId(),
+          pilotOld.getSurName(),
+          pilotOld.getName(),
+          pilotOld.getPosition(),
+          pilotOld.getFlights().size()
       );
       return new ResponseEntity<>(pilotOldDto, HttpStatus.OK);
     } else {

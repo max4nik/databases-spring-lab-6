@@ -41,15 +41,15 @@ public class AirportController {
 
   @RequestMapping(method = RequestMethod.GET, value = "/{id}")
   public ResponseEntity<AirportDto> getById(@PathVariable Integer id) {
-    Airport airport = airportService.getById(id);
-    if (airport != null) {
+    Airport airportOld = airportService.getById(id);
+    if (airportOld != null) {
       AirportDto airportDto = new AirportDto(
-          airport.getId(),
-          airport.getName(),
-          airport.getAmountOfWorkers(),
-          airport.getCity(),
-          airport.getFlightsFromAirport().size(),
-          airport.getFlightsToAirport().size()
+          airportOld.getId(),
+          airportOld.getName(),
+          airportOld.getAmountOfWorkers(),
+          airportOld.getCity(),
+          airportOld.getFlightsFromAirport().size(),
+          airportOld.getFlightsToAirport().size()
       );
       return new ResponseEntity<>(airportDto, HttpStatus.OK);
     } else {
